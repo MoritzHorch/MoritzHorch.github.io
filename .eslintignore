@@ -4,4 +4,6 @@
 **/node_modules
 **/.vscode
 **/dist
-package-lock.json
+.eslintrc.cjs
+svelte.config.js
+vite.config.ts
