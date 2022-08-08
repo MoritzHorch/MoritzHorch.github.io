@@ -16,7 +16,9 @@ In this project I use Prettier as my choice for an opinionated code formatter. P
 
 ### ESLint
 
-Even though Svelte comes with a tool called `svelte-check` it does not provide an additional linter which includes a larger set of rules that enforce good practices. Just like Prettier, the installed plugins for TypeScript and Svelte provide some steadiness and consistency to the code base. ESLint can also be configured to catch and fix Prettier rules. In combination with a tool called Husky which runs commands before a commit, I make sure that code with errors never reaches the remote repository. [[3](#sources)] [[4](#sources)]
+Even though Svelte comes with a tool called `svelte-check`, it does not provide an additional linter, which includes a larger set of rules that enforce good practices. Just like Prettier, the installed plugins for TypeScript and Svelte provide some steadiness and consistency to the code base. In combination with a tool called Husky which runs commands before a commit, I make sure that code with errors never reaches the remote repository. [[3](#sources)] [[4](#sources)]
+
+Normally, I would configure ESLint to catch Prettier errors while linting, but this does not seem to be supported. [[5](#sources)]
 
 # Sources
 
@@ -27,3 +29,5 @@ Even though Svelte comes with a tool called `svelte-check` it does not provide a
 [3] ESLint - The pluggable linting utility for JavaScript and JSX, August 22. [Online]. Available: [https://eslint.org/](https://eslint.org/)
 
 [4] Husky - Modern native Git hooks made easy, August 22. [Online]. Available: [https://eslint.org/](https://eslint.org/)
+
+[5] eslint-plugin-svelte3 - Interactions with other plugins, August 22. [Online]. Available: [Interactions with other plugins](https://github.com/sveltejs/eslint-plugin-svelte3/blob/master/OTHER_PLUGINS.md#eslint-plugin-prettier)
