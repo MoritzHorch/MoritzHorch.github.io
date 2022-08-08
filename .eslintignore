@@ -3,6 +3,7 @@
 **/.hg
 **/node_modules
 **/.vscode
+**/.husky
 **/dist
 .eslintrc.cjs
 svelte.config.js

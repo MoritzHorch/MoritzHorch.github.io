@@ -3,5 +3,6 @@
 **/.hg
 **/node_modules
 **/.vscode
+**/.husky
 **/dist
 package-lock.json

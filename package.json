@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "format": "prettier --write .",
     "lint": "eslint --fix .",
-    "check": "svelte-check --tsconfig ./tsconfig.json"
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "precheck": "npm run lint",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.1",
@@ -18,6 +20,7 @@
     "@typescript-eslint/parser": "^5.32.0",
     "eslint": "^8.21.0",
     "eslint-plugin-svelte3": "^4.0.0",
+    "husky": "^8.0.1",
     "prettier": "^2.7.1",
     "prettier-plugin-svelte": "^2.7.0",
     "svelte": "^3.49.0",
