@@ -10,6 +10,7 @@
     "format": "prettier --write .",
     "lint": "eslint . --max-warnings=0",
     "test": "vitest",
+    "test:ui": "vitest --ui",
     "coverage": "vitest run --coverage",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "prepare": "husky install"
@@ -21,6 +22,7 @@
     "@tsconfig/svelte": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^5.32.0",
     "@typescript-eslint/parser": "^5.32.0",
+    "@vitest/ui": "^0.21.1",
     "c8": "^7.12.0",
     "eslint": "^8.21.0",
     "eslint-plugin-svelte3": "^4.0.0",
