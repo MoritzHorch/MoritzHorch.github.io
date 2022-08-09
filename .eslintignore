@@ -5,6 +5,7 @@
 **/.vscode
 **/.husky
 **/dist
+**/coverage
 .eslintrc.cjs
 svelte.config.js
 vite.config.ts
