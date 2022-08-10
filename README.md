@@ -28,10 +28,6 @@ On top of that I use the Testing Library for Svelte. Testing Library provides an
 
 Personally, I used the Testing Librar for React as well and rely on known best practices and patterns.
 
-## Work in progress
-
-- Coverage is not yet working. Even though I use `vitest run --coverage` as suggested, the output will always be zero coverage. This is bad, as I want transparency about what part of the codebase contains potential errors. Neither can I make sure that the whole code base is covered.
-
 # Sources
 
 [1] Svelte - Cybernetically enhanced web apps, August 2022. [Online]. Available: [https://svelte.dev/](https://svelte.dev/)
