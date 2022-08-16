@@ -2,11 +2,13 @@ import { render, screen } from '@testing-library/svelte';
 import App from 'src/App.svelte';
 
 describe('App ...', () => {
-  it('should render Hello World', () => {
+  it('should render content of banner', () => {
     render(App);
 
-    const helloWorldText = screen.queryByText('Hello World');
+    const textFromBannerTxt = screen.getByText('Moritz Horch', {
+      exact: false
+    });
 
-    expect(helloWorldText).toBeInTheDocument();
+    expect(textFromBannerTxt).toBeInTheDocument();
   });
 });
