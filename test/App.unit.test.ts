@@ -5,10 +5,15 @@ describe('App ...', () => {
   it('should render content of banner', () => {
     render(App);
 
-    const textFromBannerTxt = screen.getByText('Moritz Horch', {
-      exact: false
-    });
+    expect(
+      screen.getByText('Moritz Horch', { exact: false })
+    ).toBeInTheDocument();
+  });
 
-    expect(textFromBannerTxt).toBeInTheDocument();
+  it('should render command history entries after terminal is initialized', () => {
+    render(App, { terminalInitialized: true });
+
+    expect(screen.getByText('foo', { exact: false })).toBeInTheDocument();
+    expect(screen.getByText('bar', { exact: false })).toBeInTheDocument();
   });
 });
