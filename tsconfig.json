@@ -9,7 +9,10 @@
     "strict": true,
     "noImplicitAny": true,
     "isolatedModules": true,
-    "types": ["vitest/globals"]
+    "types": ["vitest/globals"],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": [
     "src/**/*.d.ts",
