@@ -1,6 +1,6 @@
 import TerminalInput from '@/components/TerminalInput.svelte';
 import { commandHistory } from '@/stores/commandHistory';
-import { act, fireEvent, render, screen } from '@testing-library/svelte';
+import { fireEvent, render, screen } from '@testing-library/svelte';
 
 vi.mock('@/stores/commandHistory', () => ({
   commandHistory: {
@@ -20,19 +20,15 @@ describe('Terminal Entry ...', () => {
 
     const inputField = screen.getByTestId('terminal-input');
 
-    await act(() =>
-      fireEvent.change(inputField, {
-        target: { value: 'sdf' }
-      })
-    );
+    await fireEvent.change(inputField, {
+      target: { value: 'sdf' }
+    });
 
     expect(commandHistory.update).not.toHaveBeenCalled();
 
-    await act(() =>
-      fireEvent.keyUp(inputField, {
-        key: 'Enter'
-      })
-    );
+    await fireEvent.keyUp(inputField, {
+      key: 'Enter'
+    });
 
     expect(commandHistory.update).toHaveBeenCalled();
   });
