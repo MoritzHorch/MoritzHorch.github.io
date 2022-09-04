@@ -1,25 +1,23 @@
 <script lang="ts">
-  import { runCommand } from '@/commands';
+  import HelpCommand from '@/components/commands/HelpCommand.svelte';
+  import UnknownCommand from '@/components/commands/UnknownCommand.svelte';
 
   export let command: string;
 </script>
 
 <div class="command">
-  <p>$> {command}</p>
-  <p class="output">{runCommand(command)}</p>
+  <span>$> {command}</span>
+  {#if command === 'help'}
+    <HelpCommand />
+  {:else}
+    <UnknownCommand />
+  {/if}
 </div>
 
 <style>
   .command {
-    margin-top: 20px;
+    margin-top: 3px;
     margin-left: 3px;
-  }
-
-  .command > p {
-    margin: 3px;
-  }
-
-  .output {
-    white-space: pre-wrap;
+    margin-bottom: 0px;
   }
 </style>

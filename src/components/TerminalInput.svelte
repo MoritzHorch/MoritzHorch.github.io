@@ -12,7 +12,7 @@
 </script>
 
 <div class="terminalInput">
-  <p style="white-space: pre">$>{' '}</p>
+  <span style="white-space: pre">$>{' '}</span>
   <input
     data-testid="terminal-input"
     class="inputField"
