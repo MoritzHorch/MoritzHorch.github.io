@@ -1,7 +1,6 @@
 import TerminalInput from '@/components/TerminalInput.svelte';
 import { commandHistory } from '@/stores/commandHistory';
 import { act, fireEvent, render, screen } from '@testing-library/svelte';
-import type { Mock, MockedFunction } from 'vitest';
 
 vi.mock('@/stores/commandHistory', () => ({
   commandHistory: {
