@@ -13,7 +13,9 @@
 
 <div class="terminalInput">
   <span style="white-space: pre">$>{' '}</span>
+  <!-- svelte-ignore a11y-autofocus -->
   <input
+    autofocus
     data-testid="terminal-input"
     class="inputField"
     bind:value={command}

@@ -1,3 +1,3 @@
 import { writable } from 'svelte/store';
 
-export const commandHistory = writable<string[]>(['foo']);
+export const commandHistory = writable<string[]>([]);
