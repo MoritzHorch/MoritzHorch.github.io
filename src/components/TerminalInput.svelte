@@ -13,7 +13,12 @@
 
 <div class="terminalInput">
   <p style="white-space: pre">$>{' '}</p>
-  <input class="inputField" bind:value={command} on:keyup={onKeyEnterUp} />
+  <input
+    data-testid="terminal-input"
+    class="inputField"
+    bind:value={command}
+    on:keyup={onKeyEnterUp}
+  />
 </div>
 
 <style>
