@@ -18,4 +18,8 @@
   .command > p {
     margin: 3px;
   }
+
+  .output {
+    white-space: pre-wrap;
+  }
 </style>

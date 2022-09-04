@@ -10,8 +10,6 @@ describe('Commands ...', () => {
   it('should return output of unknown command when not exists', () => {
     const output = runCommand('foo');
 
-    expect(output).toBe(
-      'Unknown command. Try running "help" to see all available commands.'
-    );
+    expect(output).toContain('Unknown command.');
   });
 });
