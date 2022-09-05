@@ -4,12 +4,17 @@
   import { bounceOut } from 'svelte/easing';
 
   export let terminalInitialized = false;
+
+  function finishInitialization() {
+    terminalInitialized = true;
+  }
 </script>
 
 <p
   in:blur={{ duration: 1500, easing: bounceOut }}
-  on:introend={() => (terminalInitialized = true)}
+  on:introend={finishInitialization}
   id="banner"
+  data-testid="banner"
 >
   {banner}
 </p>
