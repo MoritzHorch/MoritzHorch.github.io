@@ -1,0 +1,20 @@
+# Runs the tests and check for coverage
+# This includes a basic coverage check
+
+name: Tests
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+      - name: Install dependencies
+        run: npm ci
+      - name: Run tests and check coverage
+        run: npm coverage
