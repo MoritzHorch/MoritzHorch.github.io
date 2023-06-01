@@ -1,11 +1,13 @@
-# Builds the static app
-# Check for error free build and cache artifacts
+# Builds the static app for testing purposes
+name: Build
 
-name: Build app and upload artifact
-on: push
+on:
+  push:
+    branches-ignore:
+      - main
 
 jobs:
-  build-and-upload:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,8 +20,3 @@ jobs:
         run: npm ci
       - name: Run build
         run: npm run build
-      - name: Upload dist folder
-        uses: actions/upload-artifact@v3
-        with:
-          name: dist
-          path: dist
