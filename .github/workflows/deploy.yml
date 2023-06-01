@@ -11,7 +11,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    # TODO run only on main branch
     environment:
       name: prod
       url: ${{ steps.deployment.outputs.page_url }}
