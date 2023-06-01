@@ -1,7 +1,7 @@
 # Runs the tests and check for coverage
 # This includes a basic coverage check
 
-name: Run tests
+name: Test
 on: push
 
 jobs:

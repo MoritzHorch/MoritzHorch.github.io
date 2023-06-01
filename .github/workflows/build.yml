@@ -1,7 +1,7 @@
 # Builds the static app
 # Check for error free build and cache artifacts
 
-name: Build app and upload artifact
+name: Build
 on: push
 
 jobs:
