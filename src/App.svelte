@@ -1,36 +1,18 @@
 <script lang="ts">
-  import { blur } from 'svelte/transition';
-  import { bounceOut } from 'svelte/easing';
-  import banner from './assets/banner.txt?raw';
+  import { commandHistory } from '@/stores/commandHistory';
+  import TerminalBanner from '@/components/TerminalBanner.svelte';
+  import TerminalEntry from '@/components/TerminalEntry.svelte';
+  import TerminalInput from '@/components/TerminalInput.svelte';
 
-  let terminalInitialized = false;
+  export let terminalInitialized = false;
 </script>
 
 <main>
-  <p
-    in:blur={{ duration: 1500, easing: bounceOut }}
-    on:introend={() => (terminalInitialized = true)}
-    id="banner"
-  >
-    {banner}
-  </p>
+  <TerminalBanner bind:terminalInitialized />
   {#if terminalInitialized}
-    <p>$> <span id="cursor">_</span></p>
+    {#each $commandHistory as command}
+      <TerminalEntry {command} />
+    {/each}
+    <TerminalInput />
   {/if}
 </main>
-
-<style>
-  #banner {
-    white-space: pre-wrap;
-    line-height: 1.2;
-  }
-
-  @keyframes blink {
-    50% {
-      opacity: 0;
-    }
-  }
-  #cursor {
-    animation: blink 1s step-start 0s infinite;
-  }
-</style>

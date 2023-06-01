@@ -2,16 +2,20 @@
 import { defineConfig } from 'vite';
 import { configDefaults } from 'vitest/config';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
-import tsconfigPaths from 'vite-tsconfig-paths';
+import { fileURLToPath, URL } from 'url';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     svelte({
       hot: !process.env.VITEST
-    }),
-    tsconfigPaths()
+    })
   ],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
+  },
   test: {
     setupFiles: ['test/setupTests.ts'],
     globals: true,
