@@ -19,7 +19,6 @@ jobs:
       - name: Run build
         run: npm run build
       - name: Upload dist folder
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-pages-artifact@v1
         with:
-          name: dist
-          path: dist/
+          path: ./dist
