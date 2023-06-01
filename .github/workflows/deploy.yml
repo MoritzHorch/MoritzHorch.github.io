@@ -1,17 +1,32 @@
-# This deploys the artifact from build workflow
+# This deploys a freshly build artifact
 name: Deploy to GitHub Pages
 
 # TODO run only on main branch
 on:
-  pull_request:
-  workflow_run:
-    workflows: [Build]
-    types: [completed]
+  push:
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    # TODO run only on main branch
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+      - name: Install dependencies
+        run: npm ci
+      - name: Run build
+        run: npm run build
+      - name: Upload dist folder
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
     environment:
       name: prod
       url: ${{ steps.deployment.outputs.page_url }}

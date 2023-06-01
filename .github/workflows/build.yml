@@ -1,8 +1,10 @@
-# Builds the static app
-# Check for error free build and cache artifacts
-
+# Builds the static app for testing purposes
 name: Build
-on: push
+
+on:
+  push:
+    branches-ignore:
+      - main
 
 jobs:
   build-and-upload:
@@ -18,7 +20,3 @@ jobs:
         run: npm ci
       - name: Run build
         run: npm run build
-      - name: Upload dist folder
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./dist
