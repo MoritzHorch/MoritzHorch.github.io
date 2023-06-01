@@ -3,9 +3,9 @@ name: Deploy to GitHub Pages
 
 # TODO run only on main branch
 on:
+  pull_request:
   workflow_run:
     workflows: [Build]
-    branches: [feature/workflow_deploy]
     types: [completed]
 
 jobs:
