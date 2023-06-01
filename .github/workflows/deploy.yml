@@ -5,6 +5,7 @@ name: Deploy to GitHub Pages
 on:
   workflow_run:
     workflows: [Build]
+    branches: [feature/workflow_deploy]
     types: [completed]
 
 jobs:
