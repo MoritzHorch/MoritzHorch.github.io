@@ -1,9 +1,10 @@
 # This deploys a freshly build artifact
 name: Deploy to GitHub Pages
 
-# TODO run only on main branch
 on:
   push:
+    branches:
+      - main
 
 jobs:
   build:
