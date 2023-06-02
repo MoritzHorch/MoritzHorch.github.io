@@ -28,7 +28,9 @@ describe('App ...', () => {
 
     expect(screen.getByText(/help$/)).toBeInTheDocument();
     expect(
-      screen.getByText('No command other than help exists.')
+      screen.getByText('about - a short introduction about myself', {
+        exact: false
+      })
     ).toBeInTheDocument();
   });
 });

@@ -6,7 +6,7 @@ describe('Help Command ...', () => {
     render(HelpCommand);
 
     expect(
-      screen.getByText('No command other than help exists.')
+      screen.getByText('about - a short introduction about myself')
     ).toBeInTheDocument();
   });
 });

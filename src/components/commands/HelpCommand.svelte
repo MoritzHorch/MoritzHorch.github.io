@@ -1,1 +1,1 @@
-<p>No command other than help exists.</p>
+<p>about - a short introduction about myself</p>
