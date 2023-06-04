@@ -2,12 +2,15 @@ import { render, screen } from '@testing-library/svelte';
 import TerminalEntry from '@/components/TerminalEntry.svelte';
 
 describe('Terminal Entry ...', () => {
-  it('should render help command', () => {
-    render(TerminalEntry, { command: 'help' });
+  it.each([
+    ['help', 'about - a short introduction about myself'],
+    ['about', 'Hi! My name is Moritz Horch']
+  ])('should render commands', (command, output) => {
+    render(TerminalEntry, { command });
 
-    expect(screen.getByText(/help$/)).toBeInTheDocument();
+    expect(screen.getByText(new RegExp(`${command}$`))).toBeInTheDocument();
     expect(
-      screen.getByText('No command other than', {
+      screen.getByText(output, {
         exact: false
       })
     ).toBeInTheDocument();

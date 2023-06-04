@@ -1,6 +1,7 @@
 <script lang="ts">
   import HelpCommand from '@/components/commands/HelpCommand.svelte';
   import UnknownCommand from '@/components/commands/UnknownCommand.svelte';
+  import AboutCommand from '@/components/commands/AboutCommand.svelte';
 
   export let command: string;
 </script>
@@ -9,6 +10,8 @@
   <span>$> {command}</span>
   {#if command === 'help'}
     <HelpCommand />
+  {:else if command === 'about'}
+    <AboutCommand />
   {:else}
     <UnknownCommand />
   {/if}
