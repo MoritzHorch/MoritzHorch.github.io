@@ -8,5 +8,8 @@ describe('Help Command ...', () => {
     expect(
       screen.getByText('about - a short introduction about myself')
     ).toBeInTheDocument();
+    expect(
+      screen.getByText('skills - programming languages, tools, practises')
+    ).toBeInTheDocument();
   });
 });
