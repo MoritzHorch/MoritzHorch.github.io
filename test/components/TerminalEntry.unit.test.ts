@@ -4,8 +4,9 @@ import TerminalEntry from '@/components/TerminalEntry.svelte';
 describe('Terminal Entry ...', () => {
   it.each([
     ['help', 'about - a short introduction about myself'],
-    ['about', 'Hi! My name is Moritz Horch']
-  ])('should render commands', (command, output) => {
+    ['about', 'Hi! My name is Moritz Horch'],
+    ['skills', 'Java']
+  ])('should render command %s', (command, output) => {
     render(TerminalEntry, { command });
 
     expect(screen.getByText(new RegExp(`${command}$`))).toBeInTheDocument();

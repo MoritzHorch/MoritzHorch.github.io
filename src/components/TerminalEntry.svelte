@@ -2,6 +2,7 @@
   import HelpCommand from '@/components/commands/HelpCommand.svelte';
   import UnknownCommand from '@/components/commands/UnknownCommand.svelte';
   import AboutCommand from '@/components/commands/AboutCommand.svelte';
+  import SkillsCommand from '@/components/commands/SkillsCommand.svelte';
 
   export let command: string;
 </script>
@@ -12,6 +13,8 @@
     <HelpCommand />
   {:else if command === 'about'}
     <AboutCommand />
+  {:else if command === 'skills'}
+    <SkillsCommand />
   {:else}
     <UnknownCommand />
   {/if}
