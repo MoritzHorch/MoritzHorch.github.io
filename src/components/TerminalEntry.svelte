@@ -3,6 +3,7 @@
   import about from '@/assets/about.txt?raw';
   import skills from '@/assets/skills.txt?raw';
   import career from '@/assets/career.txt?raw';
+  import hobbies from '@/assets/hobbies.txt?raw';
 
   export let command: string;
 
@@ -10,7 +11,8 @@
     help,
     about,
     skills,
-    career
+    career,
+    hobbies
   };
 
   const commandContent =

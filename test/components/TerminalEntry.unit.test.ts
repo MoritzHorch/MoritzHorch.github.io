@@ -7,6 +7,7 @@ describe('Terminal Entry ...', () => {
     ['about', 'Hi! My name is Moritz Horch'],
     ['skills', 'Java'],
     ['career', '@DHBW'],
+    ['hobbies', 'Gaming'],
     ['foo', 'Unknown command']
   ])('should render command %s', (command, output) => {
     render(TerminalEntry, { command });
