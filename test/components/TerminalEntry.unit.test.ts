@@ -5,7 +5,8 @@ describe('Terminal Entry ...', () => {
   it.each([
     ['help', 'about - a short introduction about myself'],
     ['about', 'Hi! My name is Moritz Horch'],
-    ['skills', 'Java']
+    ['skills', 'Java'],
+    ['career', '@DHBW']
   ])('should render command %s', (command, output) => {
     render(TerminalEntry, { command });
 

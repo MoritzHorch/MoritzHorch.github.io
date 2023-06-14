@@ -6,6 +6,7 @@ JS, TS      6 years+, go to language for web development since my studies
 SQL         7 years+, no application without a database, right?
 HTML, CSS   8 years+, not a programming language, but still noteworthy
 
+
 Frameworks
 
 SpringBoot  6 years+, go to framework during studies and at work
@@ -14,12 +15,14 @@ React       6 years+, go to framework during studies and at work
 Of course a lot more. I try to test each newest javascript and java framework at
 least once. This site is built using Svelte for example. But also Angular, NextJS, ...
 
+
 Tooling
 
 Docker          4 years+, wished I learned that earlier
 Git             6 years+, wished I learned that earlier
 Google Cloud    4 years+, including the most known services
 Cloud Foundry   4 years+, as an user, not as an administrator
+
 
 Practises
 
