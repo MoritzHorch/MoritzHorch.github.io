@@ -11,5 +11,8 @@ describe('Help Command ...', () => {
     expect(
       screen.getByText('skills - programming languages, tools, practises')
     ).toBeInTheDocument();
+    expect(
+      screen.getByText('career - work, studies and school')
+    ).toBeInTheDocument();
   });
 });
