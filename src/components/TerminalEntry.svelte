@@ -5,22 +5,23 @@
   import career from '@/assets/career.txt?raw';
 
   export let command: string;
+
+  const commandContentMap: Record<string, string> = {
+    help,
+    about,
+    skills,
+    career
+  };
+
+  const commandContent =
+    commandContentMap[command] ??
+    'Unknown command. Try running "help" to see all available commands.';
 </script>
 
 <div class="command">
   <span>$> {command}</span>
   <p class="commandContent">
-    {#if command === 'help'}
-      {help}
-    {:else if command === 'about'}
-      {about}
-    {:else if command === 'skills'}
-      {skills}
-    {:else if command === 'career'}
-      {career}
-    {:else}
-      Unknown command. Try running "help" to see all available commands.
-    {/if}
+    {commandContent}
   </p>
 </div>
 
