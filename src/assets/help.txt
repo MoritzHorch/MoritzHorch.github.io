@@ -3,3 +3,5 @@ about - a short introduction about myself
 skills - programming languages, tools, practises
 
 career - work, studies and school
+
+hobbies - what I do besides my job
