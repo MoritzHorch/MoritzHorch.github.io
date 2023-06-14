@@ -1,32 +1,37 @@
 <script lang="ts">
-  import HelpCommand from '@/components/commands/HelpCommand.svelte';
-  import UnknownCommand from '@/components/commands/UnknownCommand.svelte';
-  import AboutCommand from '@/components/commands/AboutCommand.svelte';
-  import SkillsCommand from '@/components/commands/SkillsCommand.svelte';
-  import CareerCommand from '@/components/commands/CareerCommand.svelte';
+  import help from '@/assets/help.txt?raw';
+  import about from '@/assets/about.txt?raw';
+  import skills from '@/assets/skills.txt?raw';
+  import career from '@/assets/career.txt?raw';
 
   export let command: string;
 </script>
 
 <div class="command">
   <span>$> {command}</span>
-  {#if command === 'help'}
-    <HelpCommand />
-  {:else if command === 'about'}
-    <AboutCommand />
-  {:else if command === 'skills'}
-    <SkillsCommand />
-  {:else if command === 'career'}
-    <CareerCommand />
-  {:else}
-    <UnknownCommand />
-  {/if}
+  <p class="commandContent">
+    {#if command === 'help'}
+      {help}
+    {:else if command === 'about'}
+      {about}
+    {:else if command === 'skills'}
+      {skills}
+    {:else if command === 'career'}
+      {career}
+    {:else}
+      Unknown command. Try running "help" to see all available commands.
+    {/if}
+  </p>
 </div>
 
 <style>
   .command {
     margin-top: 3px;
     margin-left: 3px;
-    margin-bottom: 0px;
+    margin-bottom: 30px;
+  }
+
+  .commandContent {
+    white-space: pre-line;
   }
 </style>
