@@ -5,7 +5,10 @@
 
   function onKeyEnterUp(keyboardEvent: KeyboardEvent) {
     if (keyboardEvent.key === 'Enter') {
-      commandHistory.update(entries => [...entries, command]);
+      commandHistory.update(entries => [
+        ...entries,
+        command.toLocaleLowerCase().trim()
+      ]);
       command = '';
     }
   }
@@ -32,6 +35,7 @@
 
   .inputField {
     border: none;
+    flex-grow: 1;
     background-color: transparent;
     font-family: 'Roboto Mono Medium', 'Courier New', monospace;
     font-size: 15px;
