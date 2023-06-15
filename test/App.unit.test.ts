@@ -18,13 +18,13 @@ describe('App ...', () => {
     expect(screen.queryByTestId('terminal-input')).not.toBeInTheDocument();
   });
 
-  it('should render termnial entry given by terminal input', async () => {
+  it('should render termnial entry given by cleaned terminal input', async () => {
     const user = userEvent.setup();
     render(App, { terminalInitialized: true });
 
     expect(screen.getByTestId('terminal-input')).toBeInTheDocument();
 
-    await user.keyboard('help{Enter}');
+    await user.keyboard('  hELp {Enter}');
 
     expect(screen.getByText(/help$/)).toBeInTheDocument();
     expect(

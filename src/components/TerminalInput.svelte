@@ -5,7 +5,10 @@
 
   function onKeyEnterUp(keyboardEvent: KeyboardEvent) {
     if (keyboardEvent.key === 'Enter') {
-      commandHistory.update(entries => [...entries, command]);
+      commandHistory.update(entries => [
+        ...entries,
+        command.toLocaleLowerCase().trim()
+      ]);
       command = '';
     }
   }
