@@ -32,6 +32,7 @@
 
   .inputField {
     border: none;
+    flex-grow: 1;
     background-color: transparent;
     font-family: 'Roboto Mono Medium', 'Courier New', monospace;
     font-size: 15px;
